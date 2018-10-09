@@ -5,8 +5,15 @@
   "main": "index.js",
   "author": "ryan.xu",
   "license": "MIT",
+  "scripts": {
+    "build": "rollup -c scripts/rollup.config.js"
+  },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "karma": "^3.0.0",
-    "rollup": "^0.66.5"
+    "rollup": "^0.66.5",
+    "rollup-plugin-babel": "^4.0.3"
   }
 }

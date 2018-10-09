@@ -1,9 +1,9 @@
 import { createElement } from './Element'
 
-const ureact = {
+export {
     createElement
 }
 
-export default ureact
-
-export ureact
+export default {
+    createElement
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ureact",
+  "version": "1.0.0",
+  "description": "A smaller react-like library",
+  "main": "index.js",
+  "author": "ryan.xu",
+  "license": "MIT"
+}

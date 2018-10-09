@@ -4,5 +4,9 @@
   "description": "A smaller react-like library",
   "main": "index.js",
   "author": "ryan.xu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "^3.0.0",
+    "rollup": "^0.66.5"
+  }
 }

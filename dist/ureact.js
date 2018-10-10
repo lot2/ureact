@@ -7,17 +7,22 @@ function Vnode(type, key, ref, props) {
 }
 
 function createElement(type, attribute, children) {
-  var key = attribute.key ? attribute.key + '' : null;
-  var ref = attribute.ref || null;
+  var key = null;
+  var ref = null;
   var props = {};
 
-  for (var i in attribute) {
-    if (i !== 'key' && i !== 'ref') {
-      props[i] = attribute[i];
+  if (attribute) {
+    key = attribute.key ? attribute.key + '' : null;
+    ref = attribute.ref || null;
+
+    for (var i in attribute) {
+      if (i !== 'key' && i !== 'ref') {
+        props[i] = attribute[i];
+      }
     }
   }
 
-  props.children = arguments.length > 2 ? [].slice.call(arguments, 2) : children;
+  props.children = arguments.length > 3 ? [].slice.call(arguments, 2) : children;
   return new Vnode(type, key, ref, props);
 }
 

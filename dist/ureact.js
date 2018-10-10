@@ -1,18 +1,24 @@
-// merge two objects
+function Vnode(type, key, ref, props) {
+  this.type = type;
+  this.key = key;
+  this.ref = ref;
+  this.props = props;
+  this.$typeof = 1;
+}
 
-// e.g. { type: xx, props: xx, children: xx }
-// export function createElement (type, props, ...args) {
-//     let children = args.length ? args : null
-//     return { type, props, children }
-// }
+function createElement(type, attribute, children) {
+  var key = attribute.key ? attribute.key + '' : null;
+  var ref = attribute.ref || null;
+  var props = {};
 
-function createElement(type, props, args) {
-  var children = arguments.length > 2 ? [].slice.call(arguments, 2) : null;
-  return {
-    type: type,
-    props: props,
-    children: children
-  };
+  for (var i in attribute) {
+    if (i !== 'key' && i !== 'ref') {
+      props[i] = attribute[i];
+    }
+  }
+
+  props.children = arguments.length > 2 ? [].slice.call(arguments, 2) : children;
+  return new Vnode(type, key, ref, props);
 }
 
 var ureact = {

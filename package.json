@@ -6,14 +6,21 @@
   "author": "ryan.xu",
   "license": "MIT",
   "scripts": {
+    "test": "karma start",
     "build": "rollup -c scripts/rollup.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "jasmine-core": "^3.2.1",
     "karma": "^3.0.0",
+    "karma-babel-preprocessor": "^8.0.0-beta.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-webpack": "^3.0.5",
     "rollup": "^0.66.5",
-    "rollup-plugin-babel": "^4.0.3"
+    "rollup-plugin-babel": "^4.0.3",
+    "webpack": "^4.20.2"
   }
 }

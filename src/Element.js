@@ -1,13 +1,19 @@
-import { extend } from './util'
+import { Vnode } from './Vnode'
 
 // create new element to object
-// e.g. { type: xx, props: xx, children: xx }
-// export function createElement (type, props, ...args) {
-//     let children = args.length ? args : null
-//     return { type, props, children }
-// }
-
-export function createElement (type, props, args) {
-    let children = arguments.length > 2 ? [].slice.call(arguments, 2) : null
-    return { type, props, children }
+export function createElement (type, attribute, children) {
+    let key = null
+    let ref = null
+    let props = {}
+    if (attribute) {
+        key = attribute.key ? attribute.key + '' : null
+        ref = attribute.ref || null
+        for (let i in attribute) {
+            if (i !== 'key' && i !== 'ref') {
+                props[i] = attribute[i]
+            }
+        }
+    }
+    props.children = arguments.length > 3 ? [].slice.call(arguments, 2) : children
+    return new Vnode(type, key, ref, props)
 }

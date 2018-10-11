@@ -3,5 +3,5 @@ export function Vnode (type, key, ref, props) {
     this.key = key
     this.ref = ref
     this.props = props
-    this.$typeof = 1
+    this.$$typeof = 1
 }

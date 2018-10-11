@@ -1,9 +1,14 @@
-import { createElement } from './Element'
+import { createElement, createElement as h } from './Element'
+import { Component } from './Component'
 
 export {
-    createElement
+    createElement,
+    h,
+    Component
 }
 
 export default {
-    createElement
+    createElement,
+    h,
+    Component
 }

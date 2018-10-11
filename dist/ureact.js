@@ -3,7 +3,7 @@ function Vnode(type, key, ref, props) {
   this.key = key;
   this.ref = ref;
   this.props = props;
-  this.$typeof = 1;
+  this.$$typeof = 1;
 }
 
 function createElement(type, attribute, children) {
@@ -70,8 +70,9 @@ function () {
 
 var ureact = {
   createElement: createElement,
+  h: createElement,
   Component: Component
 };
 
 export default ureact;
-export { createElement, Component };
+export { createElement, createElement as h, Component };

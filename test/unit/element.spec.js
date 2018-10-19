@@ -1,6 +1,6 @@
 import { createElement, Component } from '../../src/ureact'
 
- describe('ureact.js', () => {
+describe('ureact.js', () => {
     // 测试createElement
     it('createElement', () => {
         var el= createElement('div', null, 'hello')

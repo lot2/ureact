@@ -11,6 +11,7 @@ export const applyRef = (ref, value) => {
 		if (typeof ref === 'function') { 
             ref(value)
         } else {
+            // 通过 "current" 取得 DOM 节点
             ref.current = value
         }
 	}

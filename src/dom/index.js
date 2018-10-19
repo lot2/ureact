@@ -24,7 +24,6 @@ export const setAccessor = (node, name, old, value, isSvg) => {
     if (name === 'key') {
 
     } else if (name === 'ref') {
-        // unknown
         applyRef(old, null)
         applyRef(value, node)
     } else if (name === 'class' && !isSvg) {

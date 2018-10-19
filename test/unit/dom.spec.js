@@ -30,10 +30,15 @@ describe('dom.js', () => {
         let node1 = h('div', { className: 'div-class' }, 'test')
         setAccessor(node1, 'className', null, 'div-class')
         expect(node1.className).toBe('div-class')
-        // 2. refs
+        // 2. refs: object
         let ref_div = {}
         let node2 = h('div', { ref: ref_div })
         setAccessor(node2, 'ref', null, ref_div)
         expect(ref_div.current).toBe(node2)
+        // 2. refs: function
+        let ref_func = (nodes) => { return 'ref-func' }  
+        let node3 = h('div', { ref: ref_func })
+        setAccessor(node3, 'ref', null, ref_func)
+        expect(ref_func(node3)).toBe('ref-func')
     })
 })

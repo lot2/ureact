@@ -40,5 +40,17 @@ describe('dom.js', () => {
         let node3 = h('div', { ref: ref_func })
         setAccessor(node3, 'ref', null, ref_func)
         expect(ref_func(node3)).toBe('ref-func')
+        // 3. style: string
+        const node4= createNode('div', false)
+        setAccessor(node4, 'style', null, 'color: red; font-size: 14px;')
+        expect(node4.style.color).toBe('red')
+        expect(node4.style.fontSize).toBe('14px')
+        // 3. style: object
+        const node5= createNode('div', false)
+        setAccessor(node5, 'style', {color: 'yellow', width: 100}, {color: 'green', fontSize: 15})
+        expect(node5.style.color).toBe('green')
+        expect(node5.style.fontSize).toBe('15px')
+        expect(node5.style.width).toBe('')
+
     })
 })

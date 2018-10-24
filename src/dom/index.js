@@ -34,7 +34,7 @@ export const setAccessor = (node, name, old, value, isSvg) => {
         }
         if (value && typeof value === 'object') {
             if (typeof old !== 'string') {
-                for (i in old) {
+                for (let i in old) {
                     if (!(i in value)) {
                         node.style[i] = ''
                     }

@@ -1,10 +1,10 @@
 export class Component {
-    constructor (props, context) {
-        this.props = props
-        this.context = context
-    }
+  constructor (props, context) {
+    this.props = props
+    this.context = context
+  }
 
-    setState (state, callback) {
-        this._pendingState.push(state)
-    }
+  setState (state, callback) {
+    this._pendingState.push(state)
+  }
 }
